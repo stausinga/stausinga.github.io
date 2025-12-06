@@ -2,11 +2,448 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The Music Nomads</title>
+  <title>The Music Nomads – Join the Journey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Connecting people across the globe through the sharing of music." />
+
+  <style>
+    :root {
+      --bg-dark: #111827;
+      --bg-light: #f3f4f6;
+      --accent: #ef4444;
+      --text-light: #f9fafb;
+      --text-dark: #111827;
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #ffffff;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 1rem;
+      text-transform: capitalize;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(
+          to bottom right,
+          rgba(15, 23, 42, 0.88),
+          rgba(30, 64, 175, 0.78)
+        ),
+        url("https://img1.wsimg.com/isteam/ip/2833ae9e-31de-46e6-a5c7-3e3ab85d0513/pexels-gene-taylor-257856-848748.jpg/%3A/cr%3Dt%3A22.61%25%2Cl%3A9.42%25%2Cw%3A73.53%25%2Ch%3A65.22%25/rs%3Dw%3A600%2Ch%3A300%2Ccg%3Atrue%2Cm")
+        center/cover no-repeat;
+      color: var(--text-light);
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 40rem;
+      margin: 0.5rem auto 2rem;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background 0.12s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-button span.icon {
+      margin-right: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .hero-button:hover {
+      background: #dc2626;
+      transform: translateY(-1px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    /* About */
+    .about-section {
+      background: #ffffff;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .about-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-text h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: #6b7280;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-text h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    .about-text p {
+      color: #4b5563;
+    }
+
+    /* Journey */
+    .journey-section {
+      background: var(--bg-light);
+    }
+
+    .journey-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .journey-card {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .journey-card img {
+      display: block;
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    /* Contact */
+    .contact-section {
+      background: #ffffff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #374151;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      font: inherit;
+      resize: vertical;
+    }
+
+    input[type="file"] {
+      font-size: 0.85rem;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    .button-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+      background: var(--bg-dark);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.12s ease, transform 0.12s ease,
+        box-shadow 0.12s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .button-primary:hover {
+      background: #1f2937;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .contact-note {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-top: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 2rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .footer-social h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .footer-social a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .about-layout,
+      .contact-grid,
+      .footer-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .footer-copy {
+        text-align: left;
+      }
+
+      .hero {
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to The Music Nomads</h1>
-  <p>If you see this, GitHub Pages is working 🎵</p>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Join The Journey</h1>
+      <p>Connecting people across the globe through the sharing of music.</p>
+
+      <a class="hero-button" href="https://www.youtube.com/%40TheMusicNomads" target="_blank" rel="noopener">
+        <span class="icon">▶</span>
+        The Official Channel
+      </a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About us</h2>
+      <div class="about-layout">
+        <div class="about-text">
+          <h4>Our Mission</h4>
+          <p>
+            Connecting people across the globe through the sharing of music.
+          </p>
+        </div>
+        <div class="about-image">
+          <img
+            src="https://img1.wsimg.com/isteam/ip/2833ae9e-31de-46e6-a5c7-3e3ab85d0513/pexels-gene-taylor-257856-848748.jpg/%3A/cr%3Dt%3A22.61%25%2Cl%3A9.42%25%2Cw%3A73.53%25%2Ch%3A65.22%25/rs%3Dw%3A600%2Ch%3A300%2Ccg%3Atrue%2Cm"
+            alt="Bagpiper in the highlands" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section id="journey" class="journey-section">
+    <div class="container">
+      <h2>our journey so far</h2>
+      <div class="journey-grid">
+        <!-- Placeholder images for now -->
+        <div class="journey-card">
+          <img src="https://via.placeholder.com/400x300?text=Journey+1" alt="Journey photo 1" />
+        </div>
+        <div class="journey-card">
+          <img src="https://via.placeholder.com/400x300?text=Journey+2" alt="Journey photo 2" />
+        </div>
+        <div class="journey-card">
+          <img src="https://via.placeholder.com/400x300?text=Journey+3" alt="Journey photo 3" />
+        </div>
+        <div class="journey-card">
+          <img src="https://via.placeholder.com/400x300?text=Journey+4" alt="Journey photo 4" />
+        </div>
+        <div class="journey-card">
+          <img src="https://via.placeholder.com/400x300?text=Journey+5" alt="Journey photo 5" />
+        </div>
+        <div class="journey-card">
+          <img src="https://via.placeholder.com/400x300?text=Journey+6" alt="Journey photo 6" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contact us</h2>
+      <div class="contact-grid">
+        <div>
+          <form action="#" method="POST">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+
+            <div>
+              <label for="email">Email*</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Send a message or ask a question."></textarea>
+            </div>
+
+            <button class="button-primary" type="submit">Send</button>
+            <p class="contact-note">
+              Send a message or ask a question using this form. We will do our best to get back to you soon!
+            </p>
+          </form>
+        </div>
+
+        <div>
+          <h3>Questions or Comments</h3>
+          <p class="contact-note">
+            Send a message or ask a question using this form. We will do our best to get back to you soon!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-social">
+        <h3>Social</h3>
+        <a href="https://www.youtube.com/%40TheMusicNomads" target="_blank" rel="noopener">
+          YouTube – The Music Nomads
+        </a>
+      </div>
+      <div class="footer-copy">
+        Copyright © 2025 The Beggining - All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
