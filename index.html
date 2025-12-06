@@ -10,8 +10,6 @@
     :root {
       --bg-dark: #111827;
       --bg-light: #f3f4f6;
-      --accent: #ef4444;
-      --text-light: #f9fafb;
       --text-dark: #111827;
       --max-width: 960px;
     }
@@ -34,15 +32,16 @@
       text-decoration: none;
     }
 
-    /* -----------------------------
-       NEW BLACK HERO (GO-DADDY STYLE)
-       ----------------------------- */
+    /* ============================
+       ONE BIG BLACK HERO AT TOP
+       ============================ */
     .top-hero {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #000;
-      padding: 4rem 2rem;
+      color: #fff;
+      padding: 4rem 3rem;
       gap: 2rem;
       flex-wrap: wrap;
     }
@@ -61,83 +60,85 @@
 
     .hero-right {
       flex: 1 1 50%;
-      color: white;
-      text-align: center;
-      padding: 1rem;
+      text-align: left;
     }
 
     .hero-title {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .hero-subtitle {
       font-size: 1rem;
       opacity: 0.8;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
     }
 
     .white-button {
-      background: white;
-      color: black;
-      padding: 0.9rem 2rem;
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 0.9rem 2.4rem;
       border-radius: 4px;
       font-weight: 600;
-      display: inline-block;
-      transition: 0.2s;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: background 0.2s ease;
     }
 
     .white-button:hover {
       background: #e4e4e4;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .top-hero {
         flex-direction: column;
         text-align: center;
+        padding: 3rem 1.5rem;
+      }
+
+      .hero-right {
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
       }
 
       .hero-logo {
         max-width: 360px;
       }
-
-      .hero-title {
-        font-size: 2rem;
-      }
     }
 
-    /* Layout */
+    /* ============================
+       GENERIC LAYOUT
+       ============================ */
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 1.5rem;
+      padding: 2.5rem 1.5rem;
     }
 
     section {
-      padding: 3rem 0;
+      padding: 1rem 0;
     }
 
     h2 {
+      text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       font-size: 1.8rem;
-      text-align: center;
     }
 
-    /* ABOUT SECTION */
+    /* ABOUT */
     .about-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
       align-items: center;
-    }
-
-    .about-image img {
-      width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
     .about-text h4 {
@@ -146,6 +147,12 @@
       letter-spacing: 0.12em;
       margin-bottom: 0.5rem;
       color: gray;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
     @media (max-width: 768px) {
@@ -157,7 +164,6 @@
     /* JOURNEY */
     .journey-section {
       background: var(--bg-light);
-      padding: 3rem 0;
     }
 
     .journey-grid {
@@ -187,6 +193,7 @@
       border-radius: 0.5rem;
       border: 1px solid #ddd;
       margin-bottom: 1rem;
+      font: inherit;
     }
 
     textarea { min-height: 120px; }
@@ -215,13 +222,12 @@
       text-align: center;
       font-size: 0.9rem;
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- ░░░ NEW BLACK HERO ░░░ -->
+  <!-- ░░░ ONE BIG BLACK HERO ░░░ -->
   <section class="top-hero">
     <div class="hero-left">
       <img src="tmn-logo.png" alt="The Music Nomads" class="hero-logo">
@@ -229,7 +235,9 @@
 
     <div class="hero-right">
       <h1 class="hero-title">Join The Journey</h1>
-      <p class="hero-subtitle">Connecting people across the globe through the sharing of music.</p>
+      <p class="hero-subtitle">
+        Connecting people across the globe through the sharing of music.
+      </p>
       <a class="white-button" href="https://www.youtube.com/%40TheMusicNomads" target="_blank">
         THE OFFICIAL CHANNEL
       </a>
@@ -243,12 +251,16 @@
 
       <div class="about-layout">
         <div class="about-text">
-          <h4>OUR MISSION</h4>
-          <p>Connecting people across the globe through the sharing of music.</p>
+          <h4>Our Mission</h4>
+          <p>
+            Connecting people across the globe through the sharing of music.
+          </p>
         </div>
 
         <div class="about-image">
-          <img src="https://img1.wsimg.com/isteam/ip/2833ae9e-31de-46e6-a5c7-3e3ab85d0513/pexels-gene-taylor-257856-848748.jpg" />
+          <img
+            src="https://img1.wsimg.com/isteam/ip/2833ae9e-31de-46e6-a5c7-3e3ab85d0513/pexels-gene-taylor-257856-848748.jpg"
+            alt="Bagpiper in the highlands" />
         </div>
       </div>
     </div>
@@ -260,15 +272,13 @@
       <h2>Our Journey So Far</h2>
 
       <div class="journey-grid">
-
-        <!-- Replace with your real images when ready -->
+        <!-- Replace these placeholder URLs with your real images -->
         <div class="journey-card"><img src="https://via.placeholder.com/400x300?text=Journey+1"></div>
         <div class="journey-card"><img src="https://via.placeholder.com/400x300?text=Journey+2"></div>
         <div class="journey-card"><img src="https://via.placeholder.com/400x300?text=Journey+3"></div>
         <div class="journey-card"><img src="https://via.placeholder.com/400x300?text=Journey+4"></div>
         <div class="journey-card"><img src="https://via.placeholder.com/400x300?text=Journey+5"></div>
         <div class="journey-card"><img src="https://via.placeholder.com/400x300?text=Journey+6"></div>
-
       </div>
     </div>
   </section>
@@ -283,11 +293,14 @@
           <input type="text" placeholder="Name" required>
           <input type="email" placeholder="Email*" required>
           <textarea placeholder="Send a message or ask a question."></textarea>
-          <button>Send</button>
+          <button type="submit">Send</button>
         </form>
 
         <div>
-          <p>Send a message or ask a question using this form. We will do our best to get back to you soon!</p>
+          <p>
+            Send a message or ask a question using this form. We will do our
+            best to get back to you soon!
+          </p>
         </div>
       </div>
     </div>
